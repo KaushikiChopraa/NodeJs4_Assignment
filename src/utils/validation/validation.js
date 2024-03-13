@@ -14,18 +14,23 @@ const ValidateJoi = (schema) => {
 
 const Schemas = {
   
-        signUp : Joi.object({
-            name: Joi.string().required(),
-            email: Joi.string().email().required(),
+    signUp : Joi.object({
+        name: Joi.string().required(),
+        email: Joi.string().email().required(),
 
-            password: Joi.string().required()
-        }),
-     
-        login: Joi.object({
-            email: Joi.string().email().required(),
-            password: Joi.string().required()
-        }),
-    
+        password: Joi.string().required()
+    }),
+ 
+    signIn: Joi.object({
+        email: Joi.string().email().required(),
+        password: Joi.string().required()
+    }),
+
+    update: Joi.object({
+        name: Joi.string(),
+        email: Joi.string().email(),
+        password: Joi.string()
+    }),
 
    
  
